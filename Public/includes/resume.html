@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <style>
+    /* Zoom plein écran au clic/tap – 0 JS, 100 % mobile-friendly */
+    .peer:checked ~ .fullscreen {
+      display: flex !important;
+    }
+    .fullscreen {
+      display: none;
+    }
+  </style>
+</head>
+  <main class="min-h-screen py-12">
+    <section class="container mx-auto px-6">
+
+      <!-- En-tête (légèrement plus classe, mais presque identique) -->
+      <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-6xl font-black text-[#fcefe3] mb-4">
+          Mon Curriculum Vitae
+        </h1>
+        <p class="text-xl md:text-2xl text-[#fcefe3] max-w-2xl mx-auto">
+          Découvrez mon parcours académique, mes compétences et mon expérience professionnelle
+        </p>
+      </div>
+
+      <!-- Tout le reste exactement comme tu l’avais -->
+      <div class="bg-[#222222] border-2 border-[#fcefe3] rounded-2xl shadow-lg p-8 mb-8">
+        <div class="flex flex-col lg:flex-row items-start gap-8">
+
+          <!-- Preview du CV + zoom au clic/tap (sans changer le design) -->
+          <div class="flex-1">
+            <label class="cursor-zoom-in block">
+              <input type="checkbox" class="peer hidden" />
+
+              <!-- Miniature (inchangée) -->
+              <div class="bg-[#fcefe3] rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="assets/cvEthan.pdf" alt="Aperçu du CV" class="w-full" />
+              </div>
+
+              <!-- Plein écran (mobile & desktop) -->
+              <div class="fullscreen fixed inset-0 bg-black/95 z-[90] flex items-center justify-center p-4">
+                <img src="assets/cvEthan.pdf" class="max-w-full max-h-full object-contain rounded-xl" />
+              </div>
+            </label>
+          </div>
+
+          <!-- Informations et téléchargement (100 % identique) -->
+          <div class="flex-1 space-y-6">
+            <div class="bg-[#fcefe3] rounded-xl p-6 border border-gray-200">
+              <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                Informations du CV
+              </h2>
+              <div class="space-y-3 text-gray-700">
+                <div class="flex items-center gap-3"><span>Mis à jour récemment</span></div>
+                <div class="flex items-center gap-3"><span>Format professionnel A4</span></div>
+                <div class="flex items-center gap-3"><span>Poste recherché : Stage TSSR du 15 Septembre au 31 Octobre</span></div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <a href="assets/cvEthan.pdf" download="cvEthan.pdf"
+                 class="w-full bg-[#222222] border border-[#fcefe3] hover:bg-[#fcefe3] text-[#fcefe3] hover:text-[#222222] py-4 px-6 rounded-xl font-bold text-lg flex items-center justify-center gap-3 shadow-md transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg inline-block text-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Télécharger le CV (PDF)
+              </a>
+
+              <button onclick="printCV()"
+                      class="w-full bg-[#fcefe3] hover:bg-gray-200 text-gray-800 py-4 px-6 rounded-xl font-bold text-lg flex items-center justify-center gap-3 border-2 border-gray-300 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                </svg>
+                Imprimer le CV
+              </button>
+            </div>
+
+            <!-- Compétences (exactement comme tu les avais) -->
+            <div class="bg-[#fcefe3] rounded-xl p-6 border border-gray-200">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                Compétences Techniques
+              </h3>
+              <div class="space-y-4 text-gray-700">
+                <div class="flex justify-between items-center"><span class="font-medium">Administration Réseaux</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+                <div class="flex justify-between items-center"><span class="font-medium">Communication Réseaux</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+                <div class="flex justify-between items-center"><span class="font-medium">Cybersécurité</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+                <div class="flex justify-between items-center"><span class="font-medium">Programmation</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+                <div class="flex justify-between items-center"><span class="font-medium">Système</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+                <div class="flex justify-between items-center"><span class="font-medium">Internet</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+                <div class="flex justify-between items-center"><span class="font-medium">Animation</span><div class="flex gap-1"><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-[#222222] rounded-full"></div><div class="w-3 h-3 bg-gray-300 rounded-full"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function printCV() { window.open('assets/cvEthan.pdf').print(); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!-- Public/includes/projects-3.html -->
+<div class="min-h-screen bg-[#222222] text-[#fcefe3] py-20 px-6">
+
+  <!-- Hero -->
+  <div class="text-center mb-20">
+    <h1 class="text-7xl md:text-9xl font-black tracking-tighter mb-6 bg-gradient-to-r from-purple-400 via-white to-cyan-500 bg-clip-text text-transparent drop-shadow-2xl">
+      SITE INTERNET DYNAMIQUE
+    </h1>
+    <p class="text-3xl opacity-90">Projet scolaire • Développement full-stack • 2023</p>
+    <p class="mt-6 text-xl max-w-6xl mx-auto leading-relaxed opacity-80">
+      Création d'un site internet via le codage (HTML-CSS-PHP). Portfolio freelance fictif démontrant responsive design, interactions JS et backend PHP.
+    </p>
+    <a href="https://ethateck.github.io/siteWeb/demo-site/" target="_blank" class="inline-block mt-8 px-8 py-4 bg-purple-600 hover:bg-purple-700 rounded-full text-xl font-bold transition">Voir le Site Live →</a>
+  </div>
+
+  <!-- Sommaire skills -->
+  <div class="max-w-5xl mx-auto mb-16">
+    <div class="bg-[#1a1a1a] border border-purple-500/30 rounded-3xl p-12 shadow-2xl">
+      <h2 class="text-4xl font-bold text-center mb-10 text-purple-400">Compétences Démontrées</h2>
+      <ul class="grid md:grid-cols-2 gap-6 text-xl">
+        <li>• HTML5 sémantique + structure SPA-like</li>
+        <li>• CSS Grid/Flexbox + animations hover</li>
+        <li>• JavaScript ES6 (events, validation, fetch API)</li>
+        <li>• PHP backend (formulaire contact + mail())</li>
+        <li>• Responsive design (mobile-first)</li>
+        <li>• Déploiement GitHub Pages + Heroku</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Détails techniques -->
+  <div class="max-w-5xl mx-auto space-y-16 text-lg leading-relaxed">
+
+    <!-- Frontend -->
+    <div class="bg-[#1a1a1a]/90 backdrop-blur border border-[#333333] rounded-3xl p-10 shadow-xl">
+      <h2 class="text-3xl font-bold mb-6 text-purple-400">Frontend : HTML/CSS/JS</h2>
+      <p>Grille responsive avec cards interactives. Hover scale + alert démo pour simuler API calls.</p>
+      <div class="mt-6 bg-black/60 p-6 rounded-xl font-mono text-sm">
+        <span class="text-green-400">// Exemple JS : showDemo()</span><br>
+        function showDemo(type) {<br>
+          &nbsp;&nbsp;alert(`Démo ${type} : Fetch vers /api/${type}`);<br>
+        }
+      </div>
+    </div>
+
+    <!-- Backend PHP -->
+    <div class="bg-[#1a1a1a]/90 backdrop-blur border border-[#333333] rounded-3xl p-10 shadow-xl">
+      <h2 class="text-3xl font-bold mb-6 text-cyan-400">Backend : PHP pour Contact</h2>
+      <p>Formulaire validé en JS, POST vers PHP qui envoie email via mail(). Sécurisé contre injections basiques.</p>
+      <div class="mt-6 bg-black/60 p-6 rounded-xl font-mono text-sm">
+        <span class="text-green-400">&lt;?php</span><br>
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {<br>
+          &nbsp;&nbsp;$email = $_POST['email'];<br>
+          &nbsp;&nbsp;mail('contact@example.com', 'Nouveau lead', $body);<br>
+          &nbsp;&nbsp;echo json_encode(['success' => true]);<br>
+        }
+      </div>
+    </div>
+
+    <!-- Responsive & Déploiement -->
+    <div class="bg-[#1a1a1a]/90 backdrop-blur border border-[#333333] rounded-3xl p-10 shadow-xl">
+      <h2 class="text-3xl font-bold mb-6 text-green-400">Responsive + Déploiement</h2>
+      <p>CSS Media Queries pour mobile/tablette. Déployé statique sur GitHub Pages ; PHP sur Heroku pour backend.</p>
+      <ul class="mt-6 space-y-3">
+        <li>• Grid auto-fit : Adapte à l'écran (1-3 colonnes)</li>
+        <li>• Git push → Live en 1 min</li>
+        <li>• HTTPS automatique via GitHub</li>
+      </ul>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 border border-[#fcefe3]/30 rounded-3xl p-12 text-center">
+      <h2 class="text-4xl font-bold mb-6">Projet Full-Stack Basique mais Solide</h2>
+      <p class="text-xl max-w-4xl mx-auto">Démontre les bases SLAM : Du wireframe au déploiement, prêt pour scaler vers un vrai client.</p>
+    </div>
+
+    <!-- Retour -->
+    <div class="text-center mt-20">
+      <a href="?page=home" class="inline-block px-12 py-5 bg-[#fcefe3]/10 hover:bg-[#fcefe3]/20 border-2 border-[#fcefe3] rounded-full text-2xl font-bold transition-all hover:scale-110">
+        ← Retour aux Projets
+      </a>
+    </div>
+
+  </div>
+</div>

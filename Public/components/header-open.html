@@ -1,0 +1,52 @@
+<!-- components/header-open.html – Version corrigée et magnifique (plus jamais "funky") -->
+<header class="relative bg-[#222222] border-b border-[#fcefe3]/10 h-[100vh] md:h-[20vh] flex justify-center items-center overflow-hidden">
+  <div class="container mx-auto px-6 py-5">
+    <div class="flex flex-col md:flex-row justify-between items-center md:gap-10 relative z-20">
+
+      <!-- Logo (inchangé) -->
+      <a href="#" onclick="go('home')" class="group">
+        <img src="assets/logo.png" alt="Ethan" class="h-28 w-28 rounded-full border-2 border-[#fcefe3]/20 shadow-lg transition-all duration-500 group-hover:border-[#fcefe3]/60 group-hover:scale-105" />
+      </a>
+
+      <!-- NAV DESKTOP – reste inchangée -->
+      … ton nav desktop ici …
+
+      <!-- MENU MOBILE OUVERT – maintenant ultra-clean, centré et classe -->
+      <div class="fixed inset-0 bg-[#222222] flex flex-col items-center justify-center gap-7 text-6xl md:text-7xl font-black text-[#fcefe3] z-[99998] px-8">
+        
+        <a onclick="closeMenuAndGo('home')"      class="transition-all duration-300 hover:text-white hover:scale-105 text-xl">Accueil</a>
+
+        <div class="w-48 h-px bg-[#fcefe3]/20"></div>
+
+        <a onclick="closeMenuAndGo('veille')"    class="transition-all duration-300 hover:text-white hover:scale-105 text-xl">Veille</a>
+        
+        <div class="w-48 h-px bg-[#fcefe3]/20"></div>
+        
+        <a onclick="closeMenuAndGo('internship-1')" class="text-[#fcefe3]/80 transition-all duration-300 hover:scale-105 text-xl">Stage 1</a>
+
+        <div class="w-48 h-px bg-[#fcefe3]/20"></div>
+
+        <a onclick="closeMenuAndGo('internship-2')" class="text-[#fcefe3]/80 transition-all duration-300 hover:scale-105 text-xl">Stage 2</a>
+
+        <div class="w-48 h-px bg-[#fcefe3]/20"></div>
+                
+        <a onclick="closeMenuAndGo('projects')"   class="transition-all duration-300 hover:text-white hover:scale-105 text-xl">Projets</a>
+
+        <div class="w-48 h-px bg-[#fcefe3]/20"></div>
+
+        <a onclick="closeMenuAndGo('resume')"     class="transition-all duration-300 hover:text-white hover:scale-105 text-xl">CV</a>
+
+        <div class="w-48 h-px bg-[#fcefe3]/20"></div>
+
+        <a onclick="closeMenuAndGo('competence')" class="transition-all duration-300 hover:text-white hover:scale-105 text-xl">Compétence</a>
+
+        <!-- Bouton fermer – discret, en bas, avec ta flèche up.png -->
+        <button onclick="toggleMenu()" 
+                class="absolute bottom-1 right-1 rounded-full hover:bg-[#fcefe3]/10 transition-all duration-300 h-24 w-24 flex items-center">
+          <img src="assets/up-arrow.png" alt="Fermer" class="w-[100%] invert">
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>

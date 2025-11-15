@@ -1,0 +1,96 @@
+<main class="relative">
+    <!-- Hero Section avec vidéo -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video 
+            id="bg_video" 
+            src="assets/video/file.mp4" 
+            autoplay 
+            muted 
+            loop
+            class="absolute inset-0 w-full h-full object-cover"
+        ></video>
+        
+        <!-- Overlay pour meilleure lisibilité -->
+        <div class="absolute inset-0 bg-primary bg-opacity-50"></div>
+        
+        <div class="section_1_content relative z-10 text-center text-secondary px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
+                Ethan Mouillet
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light animate-fade-in-delayed">
+                Développeur Passionné & Étudiant en Informatique
+            </h2>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-secondary rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-secondary rounded-full mt-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="py-20 bg-primary sm:min-h-[80vh] flex items-center justify-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-36 md:gap-12">
+                <!-- Texte -->
+                <div class="flex-1 space-y-6 ">
+                    <h2 class="text-4xl md:text-5xl font-bold text-secondary mb-8 relative">
+                        À propos de moi
+                    </h2>
+                    
+                    <div class="space-y-4 text-lg text-secondary">
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Identité:</span>
+                            <p>Ethan Mouillet-Chaudet • Né le 15/11/2004</p>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Localisation:</span>
+                            <p>Les Landes (40) • Permis B</p>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Formation:</span>
+                            <p>Étudiant en TSSR (Technicien Supérieur Système Réseaux) à l'AFPA de Pau (8 mois)</p>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Recherche:</span>
+                            <p>Stage TSSR du 15 Septembre au 31 Octobre</p>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Objectif:</span>
+                            <p>Master Aéro IA Cybersécurité</p>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Passions:</span>
+                            <p>Astronomie, Physique, Sport, Informatique</p>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent font-semibold min-w-24 text-[#fcefe3]">Activités:</span>
+                            <p>Musculation, Boxe, Piano</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="flex-1 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-secondary rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                        <img 
+                            id="a_propos_div_img" 
+                            src="assets/ethan.png" 
+                            alt="Ethan Mouillet" 
+                            class="relative z-10 w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil | Ethan Mouillet</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://rss.app/embed/v1/widget.js"></script>
+
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#222222",
+              secondary: "#fcefe3",
+              accent: "#333333",
+            },
+          },
+        },
+      };
+
+      // Définir les fonctions GLOBALES avant le chargement
+      window.loadHTML = async function (id, file) {
+        try {
+          console.log(`🔄 Chargement: ${file}`);
+          const response = await fetch(file);
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          const html = await response.text();
+          document.getElementById(id).innerHTML = html;
+          console.log(`✅ ${file} chargé avec succès`);
+        } catch (error) {
+          console.error(`❌ Erreur ${file}:`, error);
+          document.getElementById(id).innerHTML = `
+            <div class="p-4 bg-red-500 text-white rounded m-4">
+              Erreur de chargement: ${file}
+              <br><small>${error.message}</small>
+            </div>
+          `;
+        }
+      };
+
+      window.loadPage = function (page) {
+        console.log(`📄 Chargement de la page: ${page}`);
+
+        const pageMap = {
+          home: "includes/home.html",
+          veille: "includes/veille.html",
+          resume: "includes/resume.html",
+          competence: "includes/competence.html",
+          "internship-1": "includes/internship-1.html",
+          "internship-2": "includes/internship-2.html",
+          projects: "includes/projects.html",
+          "project-1": "includes/project-1.html",
+          "project-2": "includes/project-2.html",
+          "project-3": "includes/project-3.html",
+          "project-4": "includes/project-4.html",
+        };
+
+        const file = pageMap[page] || "includes/home.html";
+        window.loadHTML("main-content", file);
+
+        // Mettre à jour l'URL sans recharger la page
+        history.pushState({ page: page }, "", `?page=${page}`);
+      };
+
+      // Gérer la navigation avec les boutons back/forward
+      window.addEventListener("popstate", function (event) {
+        if (event.state && event.state.page) {
+          window.loadPage(event.state.page);
+        }
+      });
+
+      // Function to load content based on URL parameter
+      function loadPageContent() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get("page") || "home";
+        window.loadPage(page);
+      }
+    </script>
+  </head>
+  <body class="bg-primary text-secondary min-h-screen flex flex-col">
+    <div id="header">
+      <div class="p-8 text-center animate-pulse bg-primary">
+        <div
+          class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-secondary mb-2"
+        ></div>
+        <p>Chargement du header...</p>
+      </div>
+    </div>
+
+    <!-- Main content area that changes based on page -->
+    <main id="main-content" class="flex-1">
+      <div class="container mx-auto px-4 py-16 text-center">
+        <div
+          class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-secondary mb-4"
+        ></div>
+        <p class="text-xl">Chargement du contenu...</p>
+      </div>
+    </main>
+
+    <div id="topBtn"></div>
+
+    <div id="footer">
+      <div class="p-8 text-center animate-pulse bg-primary">
+        <div
+          class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-secondary mb-2"
+        ></div>
+        <p>Chargement du footer...</p>
+      </div>
+    </div>
+
+    <script>
+      // Load components when page is ready
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("🚀 Début du chargement des composants...");
+
+        // Load common components
+        window.loadHTML("header", "components/header.html");
+        window.loadHTML("footer", "components/footer.html");
+        window.loadHTML("topBtn", "components/topBtn.html");
+
+        // Load page-specific content
+        loadPageContent();
+
+        // Load optional components
+      });
+    </script>
+    <script>
+      // === MENU MOBILE + RECHARGEMENT INTELLIGENT DU HEADER ===
+      function toggleMenu() {
+        const isOpen = location.hash === "#menu-open";
+        const newHash = isOpen ? "" : "#menu-open";
+
+        // On recharge UNIQUEMENT le header avec le bon état
+        const headerFile = newHash
+          ? "components/header-open.html"
+          : "components/header.html";
+
+        // Recharge le header avec le bon fichier selon l’état
+        window.loadHTML("header", headerFile);
+
+        // Met à jour l’URL proprement
+        history.replaceState(
+          null,
+          null,
+          location.pathname + location.search + newHash
+        );
+      }
+
+      // Fonction pour fermer proprement depuis le menu mobile
+      function closeMenuAndGo(page) {
+        go(page);
+        // Après changement de page, on veut que le menu soit fermé → recharge header normal
+        setTimeout(() => {
+          window.loadHTML("header", "components/header.html");
+          history.replaceState(null, null, location.pathname + location.search);
+        }, 100);
+      }
+
+      // Au chargement : choisir le bon header selon l’URL
+      document.addEventListener("DOMContentLoaded", function () {
+        const headerFile =
+          location.hash === "#menu-open"
+            ? "components/header-open.html"
+            : "components/header.html";
+        window.loadHTML("header", headerFile);
+      });
+
+      // Fonction go() simplifiée (comme tu aimes)
+      function go(page) {
+        loadPage(page);
+      }
+    </script>
+  </body>
+</html>

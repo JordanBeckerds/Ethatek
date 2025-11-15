@@ -1,0 +1,233 @@
+<!-- Public/includes/stage-annee1.html – VERSION FINALE 100% TAILWIND + FULLSCREEN AU TAP/CLIC SANS JS (15/11/2025) -->
+<div class="min-h-screen bg-[#222222] text-[#fcefe3] py-16 md:py-24 px-5 md:px-8 overflow-x-hidden">
+
+  <!-- HERO -->
+  <div class="text-center py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 opacity-40">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] bg-gradient-radial from-cyan-500/30 via-purple-600/20 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    <h1 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+      STAGE 1ÈRE ANNÉE
+    </h1>
+    <p class="text-2xl md:text-4xl mt-4 md:mt-8 text-cyan-300 font-bold">1er RPIMa – Bayonne</p>
+    <p class="text-lg md:text-2xl mt-4 max-w-4xl mx-auto opacity-90 leading-relaxed">
+      Plateforme de sensibilisation cybersécurité militaire
+    </p>
+  </div>
+
+  <!-- INTRO CARD -->
+  <div class="max-w-5xl mx-auto my-16 md:my-24">
+    <div class="bg-[#1a1a1a]/95 backdrop-blur-2xl border border-cyan-500/40 rounded-3xl p-8 md:p-12 text-center hover:border-cyan-300 transition-all duration-700 shadow-2xl">
+      <h2 class="text-3xl md:text-5xl font-black text-cyan-400 mb-6">Mission : Sensibiliser les Paras à la Cybermenace</h2>
+      <p class="text-base md:text-xl leading-relaxed">
+        Création et présentation d’une plateforme démontrant <strong class="text-pink-400">5 attaques réelles réalisables avec des outils grand public</strong>, 
+        validée par les officiers cybersécurité du régiment.
+      </p>
+    </div>
+  </div>
+
+  <!-- ATTACKS -->
+  <div class="space-y-20 md:space-y-32 max-w-6xl mx-auto">
+
+    <!-- 1. DOS Openfire -->
+    <div class="bg-[#1a1a1a]/95 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 md:p-12 hover:border-cyan-400 transition-all duration-700">
+      <h3 class="text-3xl md:text-4xl font-bold text-cyan-300 mb-6">Déni de Service sur Openfire</h3>
+      <pre class="bg-black p-6 rounded-xl border border-cyan-400 font-mono text-xs md:text-sm text-green-400 overflow-x-auto mb-8 whitespace-pre-wrap">sudo hping3 -c 15000 -S -d 120 -p 5222 --flood --rand-source 192.168.22.111</pre>
+      <p class="text-base md:text-lg leading-relaxed mb-8">
+        Un seul attaquant paralyse un serveur de messagerie militaire en quelques secondes.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (1).png" loading="lazy" class="rounded-xl shadow-2xl shadow-cyan-500/50 w-full peer-checked:hidden" alt="DOS Openfire">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (1).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (2).png" loading="lazy" class="rounded-xl shadow-2xl shadow-cyan-500/50 w-full peer-checked:hidden" alt="Wireshark flood">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (2).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (3).png" loading="lazy" class="rounded-xl shadow-2xl shadow-cyan-500/50 w-full peer-checked:hidden" alt="Chat bloqué">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (3).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- 2. Bruteforce FTP -->
+    <div class="bg-[#1a1a1a]/95 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 md:p-12 hover:border-purple-400 transition-all duration-700">
+      <h3 class="text-3xl md:text-4xl font-bold text-purple-300 mb-6">Bruteforce FTP avec Hydra</h3>
+      <pre class="bg-black p-6 rounded-xl border border-purple-400 font-mono text-xs md:text-sm text-green-400 overflow-x-auto mb-8 whitespace-pre-wrap">hydra -l gentil -P /usr/share/wordlists/rockyou.txt 192.168.22.111 ftp</pre>
+      <p class="text-base md:text-lg leading-relaxed mb-8">
+        Mot de passe faible = accès total aux documents classifiés.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (4).png" loading="lazy" class="rounded-xl shadow-2xl w-full peer-checked:hidden" alt="Hydra">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (4).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (5).png" loading="lazy" class="rounded-xl shadow-2xl w-full peer-checked:hidden" alt="Tentatives">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (5).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (6).png" loading="lazy" class="rounded-xl shadow-2xl w-full peer-checked:hidden" alt="Connexion réussie">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (6).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- 3. Rubber Ducky Keylogger -->
+    <div class="bg-[#1a1a1a]/95 backdrop-blur-xl border border-pink-500/30 rounded-3xl p-8 md:p-12 hover:border-pink-400 transition-all duration-700">
+      <h3 class="text-3xl md:text-4xl font-bold text-pink-300 mb-6">Rubber Ducky – Keylogger Physique</h3>
+      <p class="text-base md:text-lg leading-relaxed mb-8">
+        10 secondes d’accès physique suffisent pour voler tous les mots de passe.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (7).png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Rubber Ducky">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (7).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (8).png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Branchement">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (8).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (9).png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Payload">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (9).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (10).png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Run">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (10).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (11).png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Local">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (11).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/2025_1_image_12.png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Temp">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/2025_1_image_12.png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (13).png" loading="lazy" class="rounded-xl shadow-2xl shadow-pink-500/50 w-full peer-checked:hidden" alt="Fichier Key">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (13).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- 4. OSINT + Phishing -->
+    <div class="bg-[#1a1a1a]/95 backdrop-blur-xl border border-red-500/30 rounded-3xl p-8 md:p-12 hover:border-red-400 transition-all duration-700">
+      <h3 class="text-3xl md:text-4xl font-bold text-red-400 mb-6">OSINT + Phishing Ciblé (Nounou-Top)</h3>
+      <p class="text-base md:text-lg leading-relaxed mb-8">
+        Même les militaires sont vulnérables aux attaques sociales.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (14).png" loading="lazy" class="rounded-xl shadow-2xl w-full peer-checked:hidden" alt="Mail piégé">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (14).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+        <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+          <input type="checkbox" class="peer hidden">
+          <img src="./assets/annee_1/annee_1_image (15).png" loading="lazy" class="rounded-xl shadow-2xl w-full peer-checked:hidden" alt="Identifiants capturés">
+          <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+            <img src="./assets/annee_1/annee_1_image (15).png" class="max-w-full max-h-full object-contain rounded-xl">
+          </div>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- 5. IMSI Catcher -->
+    <div class="bg-[#1a1a1a]/95 backdrop-blur-xl border border-green-500/30 rounded-3xl p-8 md:p-12 hover:border-green-400 transition-all duration-700">
+      <h3 class="text-3xl md:text-4xl font-bold text-green-400 mb-6">Scan GSM / IMSI Catcher</h3>
+      <p class="text-base md:text-lg leading-relaxed mb-8">
+        Localisation massive de militaires français possible avec du matériel à 200 €.
+      </p>
+
+      <label class="cursor-zoom-in block md:h-[50vh] h-[25vh]">
+        <input type="checkbox" class="peer hidden">
+        <img src="./assets/annee_1/annee_1_image (16).png" loading="lazy" class="rounded-xl shadow-2xl w-full max-w-2xl mx-auto peer-checked:hidden" alt="IMSI Catcher">
+        <div class="fixed inset-0 bg-black/95 z-[99999] hidden peer-checked:flex items-center justify-center p-8">
+          <img src="./assets/annee_1/annee_1_image (16).png" class="min-w-[50vh] max-h-[50vh] object-contain rounded-xl">
+        </div>
+      </label>
+
+    </div>
+
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="mt-24 md:mt-32 text-center px-6">
+    <div class="inline-block bg-gradient-to-r from-cyan-500 to-purple-600 p-1 rounded-3xl max-w-5xl mx-auto">
+      <div class="bg-[#0a0a0a]/95 backdrop-blur-xl rounded-3xl px-10 py-12 md:px-20 md:py-16">
+        <h2 class="text-4xl md:text-6xl font-black text-cyan-400 mb-6 md:mb-8">MISSION ACCOMPLIE</h2>
+        <p class="text-lg md:text-2xl max-w-4xl mx-auto leading-relaxed">
+          Plateforme validée par les officiers cybersécurité du régiment.<br class="hidden md:block">
+          Expérience exceptionnelle au <strong class="text-pink-400">1er RPIMa</strong>.
+        </p>
+        <p class="text-2xl md:text-3xl mt-8 md:mt-12 font-bold text-purple-400">
+          Un grand merci à Sando et toute l’équipe !
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
